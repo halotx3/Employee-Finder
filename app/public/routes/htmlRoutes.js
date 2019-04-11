@@ -4,9 +4,12 @@ module.exports = function (app) {
     app.get('/survey', function (req, res) {
       res.sendFile(path.join(__dirname,'../survey.html'));
     });
+    app.get('/survey', function (req, res) {
+        res.sendFile(path.join(__dirname,'../js/survey.js'));
+      });
     //Route to point to the home page in any scenario
-    app.get('/', function (res, req){
+    app.get('*', function (req, res){
         res.sendFile(path.join(__dirname,'../home.html'))
-    })
+    });
 
   }
